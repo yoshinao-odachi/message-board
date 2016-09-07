@@ -12,31 +12,24 @@
   </div>
 </div>
 
-<div class="container">
-  <table class="table table-hover">
-    <%= form_for(@message) do |f| %>
-    <tr>
-      <td>
-        <p class=".bg-primary">名前:</p>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <%= f.text_field :name, class:"form-control" %>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <p class=".bg-primary">内容:</p>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <%= f.text_area :body, rows: 10, class:"form-control" %>
-      </td>
-    </tr>
-  </table>
-  <%= f.submit class:"btn btn-success btn-block" %>
-  </table>
+<form class-"form-horizontal">
+  <%= form_for(@message) do |f| %>
+    <div class="form-gruop">
+      <lavel for="name" class="col-sm-2 control-label">名前:</lavel>
+      <div class="col-sm-10">
+        <%= f.text_field :name, class:"form-control", placeholder:"お名前入れてね" %>
+      </div>
+    </div>
+    <div class="form-gruop">
+      <lavel for="body" class="col-sm-2 control-label">内容:</lavel>
+      <div class="col-sm-10">
+        <%= f.text_area :body, rows: 5, class:"form-control",  placeholder:"ここにテキスト入れてね" %>
+      </div>
+    </div>
+    <div class="form-gruop">
+      <div class="col-sm-6 col-sm-offset-6">
+        <%= f.submit class:"btn btn-success btn-sm" %>
+      </div>
+    </div>
 <% end %>
 </div>
